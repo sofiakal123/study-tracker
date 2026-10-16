@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Study Tracker</h1>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-value" id="total-minutes">0</span>
+        <span class="stat-label">minutes this week</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="streak">0</span>
+        <span class="stat-label">day streak</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Log a session</h2>
+      <form id="session-form">
+        <label>
+          Subject
+          <input type="text" id="subject" placeholder="e.g. Biology" required>
+        </label>
+        <label>
+          Minutes
+          <input type="number" id="minutes" min="1" max="600" placeholder="e.g. 45" required>
+        </label>
+        <label>
+          What did you learn? <span class="optional">(optional)</span>
+          <textarea id="notes" rows="2" placeholder="One thing you now understand"></textarea>
+        </label>
+        <button type="submit">Add session</button>
+        <p class="error" id="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Last 7 days</h2>
+      <div id="week-chart" class="chart"></div>
+    </section>
+
+    <section class="card">
+      <h2>Sessions</h2>
+      <ul id="session-list" class="session-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
